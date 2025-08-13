@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+*body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+.error-message {
+  color: red;
+  font-size: 0.875rem; /* Tailwind's text-sm */
+}
