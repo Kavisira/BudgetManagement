@@ -1,1 +1,21 @@
-<p>side-nav works!</p>
+<div class="sidenav-container flex h-screen bg-gray-100">
+  <!-- Sidebar -->
+  <aside [ngClass]="{'w-16 translate-x-0': isCollapsed}" class="bg-white shadow-md flex flex-col transition-transform duration-500 ease-in-out" >
+    <!-- Logo -->
+    <div class="p-4 flex items-center space-x-2 h-20">
+      <img src="assets/images/icon.png" alt="Logo" class="h-10 w-10" />
+      <h1 class="text-lg font-bold text-blue-600" *ngIf="!isCollapsed">Budget Management</h1>
+    </div>
+
+    <!-- Nav Links -->
+    <nav class="flex-1 p-4 space-y-2">
+      <a href="#" *ngFor="let items of menuItems" [ngClass]="{'active': items.route === currentRoute}" class="flex items-center p-2 rounded-lg hover:bg-gray-200 transition">
+        <span class="material-icons mr-3">{{items.icon}}</span>
+        <span *ngIf="!isCollapsed">{{items.name}}</span>
+      </a>
+    </nav>
+    <footer class="p-4 text-center text-sm text-gray-500">
+      <span class="material-icons mr-3" (click)="collapseToggle()"> logout</span>
+    </footer>
+  </aside>
+</div>

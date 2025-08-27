@@ -1,0 +1,99 @@
+<div class="p-6 grid grid-cols-12 gap-6">
+
+  <!-- Sales Overview -->
+  <div class="col-span-12 lg:col-span-4 bg-white rounded-2xl shadow p-6">
+    <h2 class="font-semibold mb-4">Sales Overview</h2>
+    <div class="grid grid-cols-4 gap-4 text-center">
+      <div>
+        <p class="text-lg font-bold">₹832</p>
+        <p class="text-gray-500 text-sm">Sales</p>
+      </div>
+      <div>
+        <p class="text-lg font-bold">₹18,300</p>
+        <p class="text-gray-500 text-sm">Revenue</p>
+      </div>
+      <div>
+        <p class="text-lg font-bold">₹868</p>
+        <p class="text-gray-500 text-sm">Profit</p>
+      </div>
+      <div>
+        <p class="text-lg font-bold">₹17,432</p>
+        <p class="text-gray-500 text-sm">Cost</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Inventory Summary -->
+  <div class="col-span-12 lg:col-span-2 bg-white rounded-2xl shadow p-6">
+    <h2 class="font-semibold mb-4">Inventory Summary</h2>
+    <div class="space-y-2">
+      <div class="flex justify-between">
+        <p>Quantity in Hand</p>
+        <p class="font-bold">868</p>
+      </div>
+      <div class="flex justify-between">
+        <p>To be Received</p>
+        <p class="font-bold">200</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Purchase Overview -->
+  <div class="col-span-12 lg:col-span-4 bg-white rounded-2xl shadow p-6">
+    <h2 class="font-semibold mb-4">Purchase Overview</h2>
+    <div class="grid grid-cols-4 gap-4 text-center">
+      <div>
+        <p class="text-lg font-bold">82</p>
+        <p class="text-gray-500 text-sm">Purchase</p>
+      </div>
+      <div>
+        <p class="text-lg font-bold">₹13,573</p>
+        <p class="text-gray-500 text-sm">Cost</p>
+      </div>
+      <div>
+        <p class="text-lg font-bold">5</p>
+        <p class="text-gray-500 text-sm">Cancel</p>
+      </div>
+      <div>
+        <p class="text-lg font-bold">₹17,432</p>
+        <p class="text-gray-500 text-sm">Return</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Summary -->
+  <div class="col-span-12 lg:col-span-2 bg-white rounded-2xl shadow p-6">
+    <h2 class="font-semibold mb-4">Product Summary</h2>
+    <div class="space-y-2">
+      <div class="flex justify-between">
+        <p>Suppliers</p>
+        <p class="font-bold">31</p>
+      </div>
+      <div class="flex justify-between">
+        <p>Categories</p>
+        <p class="font-bold">21</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sales & Purchase Chart -->
+  <div class="col-span-12 lg:col-span-7 bg-white rounded-2xl shadow p-6">
+    <h2 class="font-semibold mb-4">Sales & Purchase</h2>
+    <canvas baseChart
+      [data]="salesPurchaseData"
+      [options]="chartOptions"
+      [type]="'bar'">
+    </canvas>
+  </div>
+
+  <!-- Order Summary Chart -->
+  <div class="col-span-12 lg:col-span-5 bg-white rounded-2xl shadow p-6">
+    <h2 class="font-semibold mb-4">Order Summary</h2>
+    <canvas baseChart
+      [data]="orderSummaryData"
+      [options]="chartOptions"
+      [type]="'line'">
+    </canvas>
+  </div>
+
+</div>

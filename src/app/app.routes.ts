@@ -7,7 +7,11 @@ export const routes: Routes = [
         // canActivate: [AuthGuard] // Assuming you have a guard to check authentication
     },
     {
-        path: 'dashboard',
+        path: '',
         loadComponent: () => import('./layout/layout/layout.component').then(m => m.LayoutComponent),
+        children:[{
+            path: 'dashboard',
+            loadComponent: () => import('./features/dashboard/dashboard.component').then(m => m.DashboardComponent),
+        }]
     },
 ];

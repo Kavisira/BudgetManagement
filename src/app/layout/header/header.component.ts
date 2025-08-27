@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthServiceService } from '../../core/services/auth-service.service';
 
 @Component({
   selector: 'app-header',
@@ -8,5 +10,21 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+router = inject(Router);
+isProfileMenuOpen = false;
+currentRoute: string = this.router.getCurrentNavigation()?.finalUrl?.toString() || '';
 
+constructor(private Authservice: AuthServiceService) {
+  console.log('Current route:', this.currentRoute);
+}
+
+  toggleProfileMenu() {
+    this.isProfileMenuOpen = !this.isProfileMenuOpen;
+  }
+
+  logout() {
+    // Implement logout logic here
+    console.log('User logged out');
+    this.Authservice.logout(); // Assuming AuthService is injected
+  }
 }
